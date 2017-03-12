@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>2</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -333,6 +333,25 @@
       <string>R</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="continue_btn_V3">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>840</y>
+      <width>490</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 3/6 boton_Continuar.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QWidget" name="View4"/>

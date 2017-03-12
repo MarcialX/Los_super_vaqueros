@@ -46,7 +46,6 @@ class MainWindow(QtGui.QMainWindow):
       self.YELLOW = "src/img/ArtesPowerRangers/Pantalla 2/yellow.jpg"
       self.YELLOW_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/yellow_blocked.png"
 
-
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/main.ui")
 
@@ -155,6 +154,7 @@ class MainWindow(QtGui.QMainWindow):
       self.y_yellow = self.ui.yellow_ranger.height()
 
       self.positionV2 = self.ui.continue_btn.pos()
+      self.positionV3 = self.ui.continue_btn_V3.pos()
 
       #------------Vista 3--------------
       #-----------Título-----------------
@@ -178,6 +178,17 @@ class MainWindow(QtGui.QMainWindow):
 
       #--------------Keyboard-----------
       self.ui.keyboard.move(int(self.size_x/2 - self.ui.keyboard.width()/2),int(2*self.size_y/3))
+
+      #-------------Continuar----------- 
+      c3x = self.ui.continue_btn_V3.width()*rel_x
+      c3y = self.ui.continue_btn_V3.height()*rel_y
+
+      self.ui.continue_btn_V3.resize(int(c3x),int(c3y))
+      self.ui.continue_btn_V3.move(int(self.size_x/2 - c3x/2),int(y_init_btn))
+      self.ui.continue_btn_V3.mousePressEvent = self.pressContinueV3
+      self.ui.continue_btn_V3.mouseReleaseEvent = self.releaseContinueV3
+
+      self.firstTime = False
 
       self.ui.show()
 
@@ -210,7 +221,7 @@ class MainWindow(QtGui.QMainWindow):
       return k
 
    def pressStartV1(self,event):
-      START_BTN_PRESS = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn_Clicked.png"
+      START_BTN_PRESS = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn.png"
 
       #Imagen de press button
       startPress = QtGui.QPixmap(START_BTN_PRESS)
@@ -255,6 +266,17 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.setCurrentWidget(self.ui.View2)
 
    def pressRed(self, event):
+      if self.firstTime == False:
+         blue_btn = QPixmap(self.BLUE_BLOCK)
+         self.ui.blue_ranger.setPixmap(blue_btn)
+         black_btn = QPixmap(self.BLACK_BLOCK)
+         self.ui.black_ranger.setPixmap(black_btn)
+         pink_btn = QPixmap(self.PINK_BLOCK)
+         self.ui.pink_ranger.setPixmap(pink_btn)
+         yellow_btn = QPixmap(self.YELLOW_BLOCK)
+         self.ui.yellow_ranger.setPixmap(yellow_btn)
+         self.firstTime = True
+
       #Red esta activo
       if (self.IsChecked[0][1] == False):
          self.unlock()
@@ -271,6 +293,17 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.red_ranger.raise_()
 
    def pressBlack(self, event):
+      if self.firstTime == False:
+         blue_btn = QPixmap(self.BLUE_BLOCK)
+         self.ui.blue_ranger.setPixmap(blue_btn)
+         red_btn = QPixmap(self.RED_BLOCK)
+         self.ui.red_ranger.setPixmap(red_btn)
+         pink_btn = QPixmap(self.PINK_BLOCK)
+         self.ui.pink_ranger.setPixmap(pink_btn)
+         yellow_btn = QPixmap(self.YELLOW_BLOCK)
+         self.ui.yellow_ranger.setPixmap(yellow_btn)
+         self.firstTime = True
+
       #Black esta activo
       if (self.IsChecked[3][1] == False):
          self.unlock()
@@ -287,6 +320,17 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.black_ranger.raise_()
 
    def pressPink(self, event):
+      if self.firstTime == False:
+         blue_btn = QPixmap(self.BLUE_BLOCK)
+         self.ui.blue_ranger.setPixmap(blue_btn)
+         black_btn = QPixmap(self.BLACK_BLOCK)
+         self.ui.black_ranger.setPixmap(black_btn)
+         red_btn = QPixmap(self.RED_BLOCK)
+         self.ui.red_ranger.setPixmap(red_btn)
+         yellow_btn = QPixmap(self.YELLOW_BLOCK)
+         self.ui.yellow_ranger.setPixmap(yellow_btn)
+         self.firstTime = True
+
       #Pink esta activo
       if (self.IsChecked[1][1] == False):
          self.unlock()
@@ -303,6 +347,17 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.pink_ranger.raise_()
 
    def pressBlue(self, event):
+      if self.firstTime == False:
+         red_btn = QPixmap(self.RED_BLOCK)
+         self.ui.red_ranger.setPixmap(red_btn)
+         black_btn = QPixmap(self.BLACK_BLOCK)
+         self.ui.black_ranger.setPixmap(black_btn)
+         pink_btn = QPixmap(self.PINK_BLOCK)
+         self.ui.pink_ranger.setPixmap(pink_btn)
+         yellow_btn = QPixmap(self.YELLOW_BLOCK)
+         self.ui.yellow_ranger.setPixmap(yellow_btn)
+         self.firstTime = True
+
       #Blue esta activo
       if (self.IsChecked[2][1] == False):
          self.unlock()
@@ -319,6 +374,17 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.blue_ranger.raise_()
 
    def pressYellow(self, event):
+      if self.firstTime == False:
+         blue_btn = QPixmap(self.BLUE)
+         self.ui.blue_ranger.setPixmap(blue_btn)
+         black_btn = QPixmap(self.BLACK)
+         self.ui.black_ranger.setPixmap(black_btn)
+         pink_btn = QPixmap(self.PINK)
+         self.ui.pink_ranger.setPixmap(pink_btn)
+         red_btn = QPixmap(self.RED)
+         self.ui.red_ranger.setPixmap(red_btn)
+         self.firstTime = True
+
       #Yellow esta activo
       if (self.IsChecked[4][1] == False):
          self.unlock()
@@ -346,6 +412,20 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.continue_btn.move(x + ((1-self.b)*self.x_cV2)/2,y + ((1-self.b)*self.y_cV2)/2)
+      #self.ui.continue_btn.setPixmap(startPress)
+
+   def pressContinueV3(self,event):
+      #Se guarda el tamaño original del botón
+      self.x_cV3 = self.ui.continue_btn_V3.width()
+      self.y_cV3 = self.ui.continue_btn_V3.height()
+
+      self.ui.continue_btn_V3.resize(int(self.x_cV3*self.b),int(self.y_cV3*self.b))
+
+      position = self.ui.continue_btn_V3.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.continue_btn_V3.move(x + ((1-self.b)*self.x_cV3)/2,y + ((1-self.b)*self.y_cV3)/2)
       #self.ui.continue_btn.setPixmap(startPress)
 
    def releaseRed(self):
@@ -408,6 +488,16 @@ class MainWindow(QtGui.QMainWindow):
       if self.isSelected() == True:
          self.View3()
 
+   def releaseContinueV3(self,event):
+      self.ui.continue_btn_V3.resize(self.x_cV3,self.y_cV3)
+
+      x = self.positionV3.x()
+      y = self.positionV3.y()
+      self.ui.continue_btn_V3.move(x,y)
+      #self.ui.continue_btn.setPixmap(startRel)
+      if self.isSelected() == True:
+         self.View4()
+
    def View3(self):
       #Acción Envía Vista 3
       #Cambio de fondo vista 4
@@ -422,6 +512,10 @@ class MainWindow(QtGui.QMainWindow):
             face_ranger = QPixmap(self.URL_FACES[i])
             self.ui.photo_ranger.setPixmap(face_ranger)
             break
+
+   def View4(self):
+      self.ui.setCurrentWidget(self.ui.View4)
+      print "Hola"
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
