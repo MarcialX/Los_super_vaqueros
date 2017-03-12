@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
+    <width>995</width>
     <height>825</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>2</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -224,10 +224,10 @@
    <widget class="QLabel" name="name_v3">
     <property name="geometry">
      <rect>
-      <x>-70</x>
-      <y>150</y>
+      <x>-130</x>
+      <y>270</y>
       <width>960</width>
-      <height>40</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -235,6 +235,9 @@
     </property>
     <property name="pixmap">
      <pixmap>../src/img/ArtesPowerRangers/Pantalla 3/4 Texto2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

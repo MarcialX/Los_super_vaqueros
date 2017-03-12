@@ -149,7 +149,13 @@ class MainWindow(QtGui.QMainWindow):
       fy = self.ui.photo_ranger.height()*rel_y
 
       self.ui.photo_ranger.resize(int(fx),int(fy))
-      self.ui.photo_ranger.move(int(self.size_x/2 - fx/2),int(self.size_y/8))
+      self.ui.photo_ranger.move(int(self.size_x/2 - fx/2),int(self.size_y/6))
+
+      name_x = self.ui.name_v3.width()*rel_x
+      name_y = self.ui.name_v3.height()*rel_y
+
+      self.ui.name_v3.resize(int(name_x),int(name_y))
+      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2))
 
       self.ui.show()
 
