@@ -35,6 +35,18 @@ class MainWindow(QtGui.QMainWindow):
                         "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Black.jpg",
                         "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Yellow.jpg"]
 
+      self.RED = "src/img/ArtesPowerRangers/Pantalla 2/Red.jpg"
+      self.RED_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/red_blocked.png"
+      self.BLUE = "src/img/ArtesPowerRangers/Pantalla 2/Blue.jpg"
+      self.BLUE_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/azul_blocked.png"
+      self.BLACK = "src/img/ArtesPowerRangers/Pantalla 2/black.jpg"
+      self.BLACK_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/black_blocked.png"
+      self.PINK = "src/img/ArtesPowerRangers/Pantalla 2/pink.jpg"
+      self.PINK_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/pink_blocked.png"
+      self.YELLOW = "src/img/ArtesPowerRangers/Pantalla 2/yellow.jpg"
+      self.YELLOW_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/yellow_blocked.png"
+
+
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/main.ui")
 
@@ -254,6 +266,8 @@ class MainWindow(QtGui.QMainWindow):
          x = position.x()
          y = position.y()
          self.ui.red_ranger.move(x + ((1-self.p)*self.x_red)/2,y + ((1-self.p)*self.y_red)/2)
+         red_btn = QPixmap(self.RED)
+         self.ui.red_ranger.setPixmap(red_btn)
 
    def pressBlack(self, event):
       #Black esta activo
@@ -267,6 +281,8 @@ class MainWindow(QtGui.QMainWindow):
          x = position.x()
          y = position.y()
          self.ui.black_ranger.move(x + ((1-self.p)*self.x_black)/2,y + ((1-self.p)*self.y_black)/2)
+         black_btn = QPixmap(self.BLACK)
+         self.ui.black_ranger.setPixmap(black_btn)
 
    def pressPink(self, event):
       #Pink esta activo
@@ -280,6 +296,8 @@ class MainWindow(QtGui.QMainWindow):
          x = position.x()
          y = position.y()
          self.ui.pink_ranger.move(x + ((1-self.p)*self.x_pink)/2,y + ((1-self.p)*self.y_pink)/2)
+         pink_btn = QPixmap(self.PINK)
+         self.ui.pink_ranger.setPixmap(pink_btn)
 
    def pressBlue(self, event):
       #Blue esta activo
@@ -293,6 +311,8 @@ class MainWindow(QtGui.QMainWindow):
          x = position.x()
          y = position.y()
          self.ui.blue_ranger.move(x + ((1-self.p)*self.x_blue)/2,y + ((1-self.p)*self.y_blue)/2)
+         blue_btn = QPixmap(self.BLUE)
+         self.ui.blue_ranger.setPixmap(blue_btn)
 
    def pressYellow(self, event):
       #Yellow esta activo
@@ -306,6 +326,8 @@ class MainWindow(QtGui.QMainWindow):
          x = position.x()
          y = position.y()
          self.ui.yellow_ranger.move(x + ((1-self.p)*self.x_yellow)/2,y + ((1-self.p)*self.y_yellow)/2)
+         yellow_btn = QPixmap(self.YELLOW)
+         self.ui.yellow_ranger.setPixmap(yellow_btn)
 
    def pressContinueV2(self,event):
       #Se guarda el tamaño original del botón
@@ -323,12 +345,13 @@ class MainWindow(QtGui.QMainWindow):
 
    def releaseRed(self):
       self.ui.red_ranger.resize(self.x_red,self.y_red)
-      self.ui.red_ranger.setStyleSheet("QLabel { border: 0px solid red; }")
       position = self.ui.red_ranger.pos()
 
       x = position.x()
       y = position.y()
       self.ui.red_ranger.move(x - ((1-self.p)*self.x_red)/2,y - ((1-self.p)*self.y_red)/2)
+      red_block = QPixmap(self.RED_BLOCK)
+      self.ui.red_ranger.setPixmap(red_block)
 
    def releaseBlue(self):
       self.ui.blue_ranger.resize(self.x_blue,self.y_blue)
@@ -337,6 +360,8 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.blue_ranger.move(x - ((1-self.p)*self.x_blue)/2,y - ((1-self.p)*self.y_blue)/2)
+      blue_block = QPixmap(self.BLUE_BLOCK)
+      self.ui.blue_ranger.setPixmap(blue_block)
 
    def releasePink(self):
       self.ui.pink_ranger.resize(self.x_pink,self.y_pink)
@@ -345,7 +370,8 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.pink_ranger.move(x - ((1-self.p)*self.x_pink)/2,y - ((1-self.p)*self.y_pink)/2)
-      self.ui.pink_ranger.show() 
+      pink_block = QPixmap(self.PINK_BLOCK)
+      self.ui.pink_ranger.setPixmap(pink_block)
 
    def releaseYellow(self):
       self.ui.yellow_ranger.resize(self.x_yellow,self.y_yellow)
@@ -354,7 +380,9 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.yellow_ranger.move(x - ((1-self.p)*self.x_yellow)/2,y - ((1-self.p)*self.y_yellow)/2)
- 
+      yellow_block = QPixmap(self.YELLOW_BLOCK)
+      self.ui.yellow_ranger.setPixmap(yellow_block)   
+
    def releaseBlack(self):
       self.ui.black_ranger.resize(self.x_black,self.y_black)
       position = self.ui.black_ranger.pos()
@@ -362,7 +390,9 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.black_ranger.move(x - ((1-self.p)*self.x_black)/2,y - ((1-self.p)*self.y_black)/2)
- 
+      black_block = QPixmap(self.BLACK_BLOCK)
+      self.ui.black_ranger.setPixmap(black_block)
+
    def releaseContinueV2(self,event):
       self.ui.continue_btn.resize(self.x_cV2,self.y_cV2)
 

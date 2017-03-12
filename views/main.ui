@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>2</number>
+   <number>1</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -44,8 +44,8 @@
    <widget class="QLabel" name="black_ranger">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>-20</y>
+      <x>110</x>
+      <y>-10</y>
       <width>750</width>
       <height>250</height>
      </rect>
@@ -63,8 +63,8 @@
    <widget class="QLabel" name="blue_ranger">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>20</y>
+      <x>200</x>
+      <y>590</y>
       <width>750</width>
       <height>250</height>
      </rect>
@@ -82,8 +82,8 @@
    <widget class="QLabel" name="pink_ranger">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>110</y>
+      <x>100</x>
+      <y>180</y>
       <width>750</width>
       <height>250</height>
      </rect>
@@ -101,8 +101,8 @@
    <widget class="QLabel" name="red_ranger">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>170</y>
+      <x>120</x>
+      <y>320</y>
       <width>750</width>
       <height>250</height>
      </rect>
@@ -120,8 +120,8 @@
    <widget class="QLabel" name="yellow_ranger">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>240</y>
+      <x>120</x>
+      <y>730</y>
       <width>750</width>
       <height>250</height>
      </rect>
@@ -177,10 +177,10 @@
    <zorder>title_v2</zorder>
    <zorder>continue_btn</zorder>
    <zorder>black_ranger</zorder>
-   <zorder>pink_ranger</zorder>
    <zorder>yellow_ranger</zorder>
-   <zorder>blue_ranger</zorder>
    <zorder>red_ranger</zorder>
+   <zorder>pink_ranger</zorder>
+   <zorder>blue_ranger</zorder>
   </widget>
   <widget class="QWidget" name="View3">
    <widget class="QLabel" name="title_v3">
