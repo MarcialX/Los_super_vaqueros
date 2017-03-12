@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>2</number>
+   <number>3</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -176,6 +176,7 @@
    </widget>
   </widget>
   <widget class="QWidget" name="View3"/>
+  <widget class="QWidget" name="View4"/>
  </widget>
  <resources/>
  <connections/>
