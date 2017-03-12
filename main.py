@@ -139,7 +139,7 @@ class MainWindow(QtGui.QMainWindow):
          if self.IsChecked[i][0] == color:
             self.IsChecked[i][1] = True
          else:
-            self.IsChecked[i][0] = False
+            self.IsChecked[i][1] = False
 
    def unlock(self):
       for i in range(len(self.IsChecked)):
