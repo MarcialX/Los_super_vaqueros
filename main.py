@@ -17,7 +17,7 @@ class MainWindow(QtGui.QMainWindow):
       size_y_Original = 1920
 
       #Clicked button
-      self.p = 1.1
+      self.p = 1.15
       self.b = 0.95
 
       #Flags Vista 2
@@ -268,6 +268,7 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.red_ranger.move(x + ((1-self.p)*self.x_red)/2,y + ((1-self.p)*self.y_red)/2)
          red_btn = QPixmap(self.RED)
          self.ui.red_ranger.setPixmap(red_btn)
+         self.ui.red_ranger.raise_()
 
    def pressBlack(self, event):
       #Black esta activo
@@ -283,6 +284,7 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.black_ranger.move(x + ((1-self.p)*self.x_black)/2,y + ((1-self.p)*self.y_black)/2)
          black_btn = QPixmap(self.BLACK)
          self.ui.black_ranger.setPixmap(black_btn)
+         self.ui.black_ranger.raise_()
 
    def pressPink(self, event):
       #Pink esta activo
@@ -298,6 +300,7 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.pink_ranger.move(x + ((1-self.p)*self.x_pink)/2,y + ((1-self.p)*self.y_pink)/2)
          pink_btn = QPixmap(self.PINK)
          self.ui.pink_ranger.setPixmap(pink_btn)
+         self.ui.pink_ranger.raise_()
 
    def pressBlue(self, event):
       #Blue esta activo
@@ -313,6 +316,7 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.blue_ranger.move(x + ((1-self.p)*self.x_blue)/2,y + ((1-self.p)*self.y_blue)/2)
          blue_btn = QPixmap(self.BLUE)
          self.ui.blue_ranger.setPixmap(blue_btn)
+         self.ui.blue_ranger.raise_()
 
    def pressYellow(self, event):
       #Yellow esta activo
@@ -328,6 +332,7 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.yellow_ranger.move(x + ((1-self.p)*self.x_yellow)/2,y + ((1-self.p)*self.y_yellow)/2)
          yellow_btn = QPixmap(self.YELLOW)
          self.ui.yellow_ranger.setPixmap(yellow_btn)
+         self.ui.yellow_ranger.raise_()
 
    def pressContinueV2(self,event):
       #Se guarda el tamaño original del botón
