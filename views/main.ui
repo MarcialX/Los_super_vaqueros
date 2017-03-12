@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>897</width>
-    <height>824</height>
+    <width>860</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>3</number>
+   <number>2</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -175,7 +175,62 @@
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="View3"/>
+  <widget class="QWidget" name="View3">
+   <widget class="QLabel" name="title_v3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>600</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 3/2 Texto1.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="photo_ranger">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>651</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Red.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_v3">
+    <property name="geometry">
+     <rect>
+      <x>-70</x>
+      <y>150</y>
+      <width>960</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 3/4 Texto2.png</pixmap>
+    </property>
+   </widget>
+  </widget>
   <widget class="QWidget" name="View4"/>
  </widget>
  <resources/>
