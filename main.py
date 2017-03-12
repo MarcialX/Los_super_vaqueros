@@ -329,7 +329,8 @@ class MainWindow(QtGui.QMainWindow):
       x = position.x()
       y = position.y()
       self.ui.pink_ranger.move(x - ((1-self.p)*self.x_pink)/2,y - ((1-self.p)*self.y_pink)/2)
- 
+      self.ui.pink_ranger.show() 
+
    def releaseYellow(self):
       self.ui.yellow_ranger.resize(self.x_yellow,self.y_yellow)
       position = self.ui.yellow_ranger.pos()
