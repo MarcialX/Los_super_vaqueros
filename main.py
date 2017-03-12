@@ -191,6 +191,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.inicio_btn.setPixmap(startRel)
 
       #Acción Envía Vista 2
+      self.View2()
+
+   def View2(self):
       #Cambio de fondo vista 2
       palette  = QPalette()
       palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
@@ -337,11 +340,13 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continue_btn.move(x - ((1-self.p)*self.x_cV2)/2,y - ((1-self.p)*self.y_cV2)/2)
       #self.ui.continue_btn.setPixmap(startRel)
 
-      #Acción Envía Vista 2
-      #Cambio de fondo vista 2
-      #palette  = QPalette()
-      #palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
-      #self.ui.setPalette(palette)
+   #def View3
+
+      #Acción Envía Vista 3
+      #Cambio de fondo vista 4
+      palette  = QPalette()
+      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
+      self.ui.setPalette(palette)
       
       #self.ui.setCurrentWidget(self.ui.View2)
 
