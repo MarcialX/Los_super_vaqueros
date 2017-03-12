@@ -28,6 +28,13 @@ class MainWindow(QtGui.QMainWindow):
       self.VIEW_2 = "src/img/ArtesPowerRangers/Pantalla 2/1 Back.jpg"
       self.VIEW_3 = "src/img/ArtesPowerRangers/Pantalla 3/1 Back.jpg"
 
+      #Direcciones Caras Vista 3
+      self.URL_FACES = ["src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Red.jpg",
+                        "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Pink.jpg",
+                        "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Blue.jpg",
+                        "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Black.jpg",
+                        "src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Yellow.jpg"]
+
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/main.ui")
 
@@ -155,7 +162,10 @@ class MainWindow(QtGui.QMainWindow):
       name_y = self.ui.name_v3.height()*rel_y
 
       self.ui.name_v3.resize(int(name_x),int(name_y))
-      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2))
+      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2 + name_y))
+
+      #--------------Keyboard-----------
+      self.ui.keyboard.move(int(self.size_x/2 - self.ui.keyboard.width()/2),int(2*self.size_y/3))
 
       self.ui.show()
 
@@ -371,6 +381,12 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.setPalette(palette)
       
       self.ui.setCurrentWidget(self.ui.View3)
+
+      for i in range(len(self.IsChecked)):
+         if self.IsChecked[i][1] == True:
+            face_ranger = QPixmap(self.URL_FACES[i])
+            self.ui.photo_ranger.setPixmap(face_ranger)
+            break
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
