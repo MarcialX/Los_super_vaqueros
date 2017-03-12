@@ -177,7 +177,7 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2 + name_y))
 
       #--------------Keyboard-----------
-      self.ui.keyboard.move(int(self.size_x/2 - self.ui.keyboard.width()/2),int(2*self.size_y/3))
+      self.ui.keyboard.move(int(self.size_x/2 - self.ui.keyboard.width()/2),int(self.size_y/2))
 
       #-------------Continuar----------- 
       c3x = self.ui.continue_btn_V3.width()*rel_x
@@ -375,13 +375,13 @@ class MainWindow(QtGui.QMainWindow):
 
    def pressYellow(self, event):
       if self.firstTime == False:
-         blue_btn = QPixmap(self.BLUE)
+         blue_btn = QPixmap(self.BLUE_BLOCK)
          self.ui.blue_ranger.setPixmap(blue_btn)
-         black_btn = QPixmap(self.BLACK)
+         black_btn = QPixmap(self.BLACK_BLOCK)
          self.ui.black_ranger.setPixmap(black_btn)
-         pink_btn = QPixmap(self.PINK)
+         pink_btn = QPixmap(self.PINK_BLOCK)
          self.ui.pink_ranger.setPixmap(pink_btn)
-         red_btn = QPixmap(self.RED)
+         red_btn = QPixmap(self.RED_BLOCK)
          self.ui.red_ranger.setPixmap(red_btn)
          self.firstTime = True
 
