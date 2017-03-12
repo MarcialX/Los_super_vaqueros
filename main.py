@@ -25,6 +25,7 @@ class MainWindow(QtGui.QMainWindow):
       #Direcciones de Imágenes de fondo
       self.MAIN_VIEW = "src/img/ArtesPowerRangers/Pantalla 1/1.jpg"
       self.VIEW_2 = "src/img/ArtesPowerRangers/Pantalla 2/1 Back.jpg"
+      self.VIEW_3 = "src/img/ArtesPowerRangers/Pantalla 3/1 Back.jpg"
 
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/a.ui")
@@ -155,6 +156,13 @@ class MainWindow(QtGui.QMainWindow):
                self.releaseBlack()
             elif self.IsChecked[i][0] == 'Yellow':
                self.releaseYellow()
+
+   def isSelected(self):
+      k = False
+      for i in range(len(self.IsChecked)):
+         if self.IsChecked[i][1] == True:
+            k = True
+      return k
 
    def pressStartV1(self,event):
       START_BTN_PRESS = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn_Clicked.png"
@@ -332,23 +340,23 @@ class MainWindow(QtGui.QMainWindow):
  
    def releaseContinueV2(self,event):
       self.ui.continue_btn.resize(self.x_cV2,self.y_cV2)
-
       position = self.ui.continue_btn.pos()
 
       x = position.x()
       y = position.y()
       self.ui.continue_btn.move(x - ((1-self.p)*self.x_cV2)/2,y - ((1-self.p)*self.y_cV2)/2)
       #self.ui.continue_btn.setPixmap(startRel)
+      if self.isSelected() == True:
+         self.View3()
 
-   #def View3
-
+   def View3(self):
       #Acción Envía Vista 3
       #Cambio de fondo vista 4
       palette  = QPalette()
-      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
+      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_3).scaled(self.size_x,self.size_y)))
       self.ui.setPalette(palette)
       
-      #self.ui.setCurrentWidget(self.ui.View2)
+      self.ui.setCurrentWidget(self.ui.View3)
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)

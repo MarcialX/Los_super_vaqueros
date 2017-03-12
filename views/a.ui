@@ -175,7 +175,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="page"/>
+  <widget class="QWidget" name="View3"/>
  </widget>
  <resources/>
  <connections/>
