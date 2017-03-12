@@ -16,6 +16,10 @@ class MainWindow(QtGui.QMainWindow):
       size_x_Original = 1080
       size_y_Original = 1920
 
+      #Flags Vista 2
+      self.IsChecked = [['Red',False],['Pink',False],['Blue',False],['Black',False],['Yellow',False]]
+      self.canContinue = False
+
       #Direcciones de Imágenes de fondo
       self.MAIN_VIEW = "src/img/ArtesPowerRangers/Pantalla 1/1.jpg"
       self.VIEW_2 = "src/img/ArtesPowerRangers/Pantalla 2/1 Back.jpg"
@@ -56,7 +60,6 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.inicio_btn.mousePressEvent = self.pressStartV1
       self.ui.inicio_btn.mouseReleaseEvent = self.releaseStartV1
       #----------------------------------
-      #----------------------------------
 
       #-----------Vista 2----------------
       #-----------Título-----------------
@@ -66,7 +69,7 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.title_v2.resize(int(tx),int(ty))
       self.ui.title_v2.move(int(self.size_x/2 - tx/2),int(self.size_y/10))
 
-      #----------Bóton Ranger Azul-----------
+      #----------Bóton Ranger Azul-------
       y_init = 403*rel_y
 
       brx = self.ui.blue_ranger.width()*rel_x
@@ -106,12 +109,54 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continue_btn.move(int(self.size_x/2 - c2x/2),int(y_init_btn))
       self.ui.continue_btn.mousePressEvent = self.pressContinueV2
       self.ui.continue_btn.mouseReleaseEvent = self.releaseContinueV2
+      
+      #--------------------------------------
+      #Se guarda el tamaño original del botón
+      self.x_red = self.ui.red_ranger.width()
+      self.y_red = self.ui.red_ranger.height()
+
+      #Se guarda el tamaño original del botón
+      self.x_black = self.ui.black_ranger.width()
+      self.y_black = self.ui.black_ranger.height()
+
+      #Se guarda el tamaño original del botón
+      self.x_pink = self.ui.pink_ranger.width()
+      self.y_pink = self.ui.pink_ranger.height()
+
+      #Se guarda el tamaño original del botón
+      self.x_blue = self.ui.blue_ranger.width()
+      self.y_blue = self.ui.blue_ranger.height()
+
+      #Se guarda el tamaño original del botón
+      self.x_yellow = self.ui.yellow_ranger.width()
+      self.y_yellow = self.ui.yellow_ranger.height()
+
 
       self.ui.show()
 
-   def pressStartV1(self,event):
+   def checking(self, color):
+      for i in range(len(self.IsChecked)):
+         if self.IsChecked[i][0] == color:
+            self.IsChecked[i][1] = True
+         else:
+            self.IsChecked[i][0] = False
 
-      START_BTN_PRESS = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn.png"
+   def unlock(self):
+      for i in range(len(self.IsChecked)):
+         if self.IsChecked[i][1] == True:
+            if self.IsChecked[i][0] == 'Red':
+               self.releaseRed()
+            elif self.IsChecked[i][0] == 'Blue':
+               self.releaseBlue()
+            elif self.IsChecked[i][0] == 'Pink':
+               self.releasePink()
+            elif self.IsChecked[i][0] == 'Black':
+               self.releaseBlack()
+            elif self.IsChecked[i][0] == 'Yellow':
+               self.releaseYellow()
+
+   def pressStartV1(self,event):
+      START_BTN_PRESS = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn_Clicked.png"
 
       #Imagen de press button
       startPress = QtGui.QPixmap(START_BTN_PRESS)
@@ -153,9 +198,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.setCurrentWidget(self.ui.View2)
 
    def pressRed(self, event):
-      #Se guarda el tamaño original del botón
-      self.x_red = self.ui.red_ranger.width()
-      self.y_red = self.ui.red_ranger.height()
+      #Red esta activo
+      self.unlock()
+      self.checking('Red')
 
       self.ui.red_ranger.resize(int(self.x_red*0.9),int(self.y_red*0.9))
 
@@ -166,9 +211,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.red_ranger.move(x + (0.1*self.x_red)/2,y + (0.1*self.y_red)/2)
 
    def pressBlack(self, event):
-      #Se guarda el tamaño original del botón
-      self.x_black = self.ui.black_ranger.width()
-      self.y_black = self.ui.black_ranger.height()
+      #Red esta activo
+      self.unlock()
+      self.checking('Black')
 
       self.ui.black_ranger.resize(int(self.x_black*0.9),int(self.y_black*0.9))
 
@@ -179,9 +224,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.black_ranger.move(x + (0.1*self.x_black)/2,y + (0.1*self.y_black)/2)
 
    def pressPink(self, event):
-      #Se guarda el tamaño original del botón
-      self.x_pink = self.ui.pink_ranger.width()
-      self.y_pink = self.ui.pink_ranger.height()
+      #Pink esta activo
+      self.unlock()
+      self.checking('Pink')
 
       self.ui.pink_ranger.resize(int(self.x_pink*0.9),int(self.y_pink*0.9))
 
@@ -192,9 +237,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.pink_ranger.move(x + (0.1*self.x_pink)/2,y + (0.1*self.y_pink)/2)
 
    def pressBlue(self, event):
-      #Se guarda el tamaño original del botón
-      self.x_blue = self.ui.blue_ranger.width()
-      self.y_blue = self.ui.blue_ranger.height()
+      #Blue esta activo
+      self.unlock()
+      self.checking('Blue')
 
       self.ui.blue_ranger.resize(int(self.x_blue*0.9),int(self.y_blue*0.9))
 
@@ -205,9 +250,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.blue_ranger.move(x + (0.1*self.x_blue)/2,y + (0.1*self.y_blue)/2)
 
    def pressYellow(self, event):
-      #Se guarda el tamaño original del botón
-      self.x_yellow = self.ui.yellow_ranger.width()
-      self.y_yellow = self.ui.yellow_ranger.height()
+      #Yellow esta activo
+      self.unlock()
+      self.checking('Yellow')
 
       self.ui.yellow_ranger.resize(int(self.x_yellow*0.9),int(self.y_yellow*0.9))
 
@@ -224,35 +269,75 @@ class MainWindow(QtGui.QMainWindow):
 
       self.ui.continue_btn.resize(int(self.x_cV2*0.9),int(self.y_cV2*0.9))
 
-      position = self.ui.inicio_btn.pos()
+      position = self.ui.continue_btn.pos()
 
       x = position.x()
       y = position.y()
-      self.ui.inicio_btn.move(x + (0.1*self.x_v1b1)/2,y + (0.1*self.y_v1b1)/2)
-      self.ui.inicio_btn.setPixmap(startPress)
+      self.ui.continue_btn.move(x + (0.1*self.x_cV2)/2,y + (0.1*self.y_cV2)/2)
+      #self.ui.continue_btn.setPixmap(startPress)
 
+   def releaseRed(self):
+      self.ui.red_ranger.resize(self.x_red,self.y_red)
+
+      position = self.ui.red_ranger.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.red_ranger.move(x - (0.1*self.x_red)/2,y - (0.1*self.y_red)/2)
+
+   def releaseBlue(self):
+      self.ui.blue_ranger.resize(self.x_blue,self.y_blue)
+
+      position = self.ui.blue_ranger.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.blue_ranger.move(x - (0.1*self.x_blue)/2,y - (0.1*self.y_blue)/2)
+
+   def releasePink(self):
+      self.ui.pink_ranger.resize(self.x_pink,self.y_pink)
+
+      position = self.ui.pink_ranger.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.pink_ranger.move(x - (0.1*self.x_pink)/2,y - (0.1*self.y_pink)/2)
+ 
+   def releaseYellow(self):
+      self.ui.yellow_ranger.resize(self.x_yellow,self.y_yellow)
+
+      position = self.ui.yellow_ranger.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.yellow_ranger.move(x - (0.1*self.x_yellow)/2,y - (0.1*self.y_yellow)/2)
+ 
+   def releaseBlack(self):
+      self.ui.black_ranger.resize(self.x_black,self.y_black)
+
+      position = self.ui.black_ranger.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.black_ranger.move(x - (0.1*self.x_black)/2,y - (0.1*self.y_black)/2)
+ 
    def releaseContinueV2(self,event):
-      START_BTN_REL = "src/img/ArtesPowerRangers/Pantalla 1/inicio_btn.png"
+      self.ui.continue_btn.resize(self.x_cV2,self.y_cV2)
 
-      #Imagen de press button
-      startRel = QtGui.QPixmap(START_BTN_REL)
-
-      self.ui.inicio_btn.resize(self.x_v1b1,self.y_v1b1)
-
-      position = self.ui.inicio_btn.pos()
+      position = self.ui.continue_btn.pos()
 
       x = position.x()
       y = position.y()
-      self.ui.inicio_btn.move(x - (0.1*self.x_v1b1)/2,y - (0.1*self.y_v1b1)/2)
-      self.ui.inicio_btn.setPixmap(startRel)
+      self.ui.continue_btn.move(x - (0.1*self.x_cV2)/2,y - (0.1*self.y_cV2)/2)
+      #self.ui.continue_btn.setPixmap(startRel)
 
       #Acción Envía Vista 2
       #Cambio de fondo vista 2
-      palette  = QPalette()
-      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
-      self.ui.setPalette(palette)
+      #palette  = QPalette()
+      #palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_2).scaled(self.size_x,self.size_y)))
+      #self.ui.setPalette(palette)
       
-      self.ui.setCurrentWidget(self.ui.View2)
+      #self.ui.setCurrentWidget(self.ui.View2)
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
