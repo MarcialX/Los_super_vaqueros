@@ -21,7 +21,6 @@ class MainWindow(QtGui.QMainWindow):
 
       #Flags Vista 2
       self.IsChecked = [['Red',False],['Pink',False],['Blue',False],['Black',False],['Yellow',False]]
-      self.canContinue = False
 
       #Direcciones de Imágenes de fondo
       self.MAIN_VIEW = "src/img/ArtesPowerRangers/Pantalla 1/1.jpg"
@@ -134,7 +133,6 @@ class MainWindow(QtGui.QMainWindow):
       self.x_yellow = self.ui.yellow_ranger.width()
       self.y_yellow = self.ui.yellow_ranger.height()
 
-
       self.ui.show()
 
    def checking(self, color):
@@ -202,68 +200,73 @@ class MainWindow(QtGui.QMainWindow):
 
    def pressRed(self, event):
       #Red esta activo
-      self.unlock()
-      self.checking('Red')
+      if (self.IsChecked[0][1] == False):
+         self.unlock()
+         self.checking('Red')
 
-      self.ui.red_ranger.resize(int(self.x_red*self.p),int(self.y_red*self.p))
-      self.ui.red_ranger.setStyleSheet("QLabel { border: 10px solid red; }")
-      position = self.ui.red_ranger.pos()
+         self.ui.red_ranger.resize(int(self.x_red*self.p),int(self.y_red*self.p))
+         self.ui.red_ranger.setStyleSheet("QLabel { border: 10px solid red; }")
+         position = self.ui.red_ranger.pos()
 
-      x = position.x()
-      y = position.y()
-      self.ui.red_ranger.move(x + ((1-self.p)*self.x_red)/2,y + ((1-self.p)*self.y_red)/2)
+         x = position.x()
+         y = position.y()
+         self.ui.red_ranger.move(x + ((1-self.p)*self.x_red)/2,y + ((1-self.p)*self.y_red)/2)
 
    def pressBlack(self, event):
-      #Red esta activo
-      self.unlock()
-      self.checking('Black')
+      #Black esta activo
+      if (self.IsChecked[3][1] == False):
+         self.unlock()
+         self.checking('Black')
 
-      self.ui.black_ranger.resize(int(self.x_black*self.p),int(self.y_black*self.p))
-      self.ui.black_ranger.setStyleSheet("QLabel { border: 10px solid black; }")
-      position = self.ui.black_ranger.pos()
+         self.ui.black_ranger.resize(int(self.x_black*self.p),int(self.y_black*self.p))
+         self.ui.black_ranger.setStyleSheet("QLabel { border: 10px solid black; }")
+         position = self.ui.black_ranger.pos()
 
-      x = position.x()
-      y = position.y()
-      self.ui.black_ranger.move(x + ((1-self.p)*self.x_black)/2,y + ((1-self.p)*self.y_black)/2)
+         x = position.x()
+         y = position.y()
+         self.ui.black_ranger.move(x + ((1-self.p)*self.x_black)/2,y + ((1-self.p)*self.y_black)/2)
 
    def pressPink(self, event):
       #Pink esta activo
-      self.unlock()
-      self.checking('Pink')
+      if (self.IsChecked[1][1] == False):
+         self.unlock()
+         self.checking('Pink')
 
-      self.ui.pink_ranger.resize(int(self.x_pink*self.p),int(self.y_pink*self.p))
-      self.ui.pink_ranger.setStyleSheet("QLabel { border: 10px solid pink; }")
-      position = self.ui.pink_ranger.pos()
+         self.ui.pink_ranger.resize(int(self.x_pink*self.p),int(self.y_pink*self.p))
+         self.ui.pink_ranger.setStyleSheet("QLabel { border: 10px solid pink; }")
+         position = self.ui.pink_ranger.pos()
 
-      x = position.x()
-      y = position.y()
-      self.ui.pink_ranger.move(x + ((1-self.p)*self.x_pink)/2,y + ((1-self.p)*self.y_pink)/2)
+         x = position.x()
+         y = position.y()
+         self.ui.pink_ranger.move(x + ((1-self.p)*self.x_pink)/2,y + ((1-self.p)*self.y_pink)/2)
 
    def pressBlue(self, event):
       #Blue esta activo
-      self.unlock()
-      self.checking('Blue')
+      if (self.IsChecked[2][1] == False):
+         self.unlock()
+         self.checking('Blue')
 
-      self.ui.blue_ranger.resize(int(self.x_blue*self.p),int(self.y_blue*self.p))
-      self.ui.blue_ranger.setStyleSheet("QLabel { border: 10px solid blue; }")
-      position = self.ui.blue_ranger.pos()
+         self.ui.blue_ranger.resize(int(self.x_blue*self.p),int(self.y_blue*self.p))
+         self.ui.blue_ranger.setStyleSheet("QLabel { border: 10px solid blue; }")
+         position = self.ui.blue_ranger.pos()
 
-      x = position.x()
-      y = position.y()
-      self.ui.blue_ranger.move(x + ((1-self.p)*self.x_blue)/2,y + ((1-self.p)*self.y_blue)/2)
+         x = position.x()
+         y = position.y()
+         self.ui.blue_ranger.move(x + ((1-self.p)*self.x_blue)/2,y + ((1-self.p)*self.y_blue)/2)
 
    def pressYellow(self, event):
       #Yellow esta activo
-      self.unlock()
-      self.checking('Yellow')
+      if (self.IsChecked[4][1] == False):
+         self.unlock()
+         self.checking('Yellow')
 
-      self.ui.yellow_ranger.resize(int(self.x_yellow*self.p),int(self.y_yellow*self.p))
-      self.ui.yellow_ranger.setStyleSheet("QLabel { border: 10px solid yellow; }")
-      position = self.ui.yellow_ranger.pos()
+         self.ui.yellow_ranger.resize(int(self.x_yellow*self.p),int(self.y_yellow*self.p))
+         self.ui.yellow_ranger.setStyleSheet("QLabel { border: 10px solid yellow; }")
+         position = self.ui.yellow_ranger.pos()
 
-      x = position.x()
-      y = position.y()
-      self.ui.yellow_ranger.move(x + ((1-self.p)*self.x_yellow)/2,y + ((1-self.p)*self.y_yellow)/2)
+         x = position.x()
+         y = position.y()
+         self.ui.yellow_ranger.move(x + ((1-self.p)*self.x_yellow)/2,y + ((1-self.p)*self.y_yellow)/2)
 
    def pressContinueV2(self,event):
       #Se guarda el tamaño original del botón
