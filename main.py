@@ -28,6 +28,7 @@ class MainWindow(QtGui.QMainWindow):
       self.VIEW_2 = "src/img/ArtesPowerRangers/Pantalla 2/1 Back.jpg"
       self.VIEW_3 = "src/img/ArtesPowerRangers/Pantalla 3/1 Back.jpg"
       self.VIEW_5 = "src/img/ArtesPowerRangers/Pantalla 5/Back5.jpg"
+      self.VIEW_6 = "src/img/ArtesPowerRangers/Pantalla 7/Back-7.jpg"
 
       #Direcciones Caras Vista 3
       self.URL_FACES = ["src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Red.jpg",
@@ -123,13 +124,13 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.black_ranger.mousePressEvent = self.pressBlack   
 
       #----------Botón Continuar-------------
-      y_init_btn = 1700*rel_y
+      self.y_init_btn = 1700*rel_y
 
       c2x = self.ui.continue_btn.width()*rel_x
       c2y = self.ui.continue_btn.height()*rel_y
 
       self.ui.continue_btn.resize(int(c2x),int(c2y))
-      self.ui.continue_btn.move(int(self.size_x/2 - c2x/2),int(y_init_btn))
+      self.ui.continue_btn.move(int(self.size_x/2 - c2x/2),int(self.y_init_btn))
       self.ui.continue_btn.mousePressEvent = self.pressContinueV2
       self.ui.continue_btn.mouseReleaseEvent = self.releaseContinueV2
       
@@ -232,13 +233,22 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.key_delete.mouseReleaseEvent = self.key_delete
 
       #-------------Continuar----------- 
-      c3x = self.ui.continue_btn_V3.width()*rel_x
+      self.c3x = self.ui.continue_btn_V3.width()*rel_x
       c3y = self.ui.continue_btn_V3.height()*rel_y
 
-      self.ui.continue_btn_V3.resize(int(c3x),int(c3y))
-      self.ui.continue_btn_V3.move(int(self.size_x/2 - c3x/2),int(y_init_btn))
+      self.ui.continue_btn_V3.resize(int(self.c3x),int(c3y))
+      self.ui.continue_btn_V3.move(int(self.size_x/2 - self.c3x/2),int(self.y_init_btn))
       self.ui.continue_btn_V3.mousePressEvent = self.pressContinueV3
       self.ui.continue_btn_V3.mouseReleaseEvent = self.releaseContinueV3
+
+      #--------------Atrás--------------
+      self.ax = self.ui.cancelar.width()*rel_x
+      ay = self.ui.cancelar.height()*rel_y
+
+      self.ui.cancelar.resize(int(self.ax),int(ay))
+      self.ui.cancelar.move(int(self.size_x/25),int(self.y_init_btn))
+      self.ui.cancelar.mousePressEvent = self.pressCancelar
+      self.ui.cancelar.mouseReleaseEvent = self.releaseCancelar
 
       self.firstTime = False
 
@@ -284,6 +294,7 @@ class MainWindow(QtGui.QMainWindow):
       self.positionV3 = self.ui.continue_btn_V3.pos()
       self.positionV5 = self.ui.continuar_V5.pos()
       self.positionAtras = self.ui.atras.pos()
+      self.positionCancelar = self.ui.cancelar.pos()
 
       #------------Vista 6---------------
       #------------Muestra GIF-------------
@@ -301,6 +312,14 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.title_V6.resize(int(self.mail_x),int(mail_y))
       self.ui.title_V6.move(int(self.size_x/2 - self.mail_x/2),int(self.altura_mail))
 
+      #----------Acepto?-------------
+      self.altura_acepto = 1650*rel_y
+      self.acepto_x = self.ui.acepto.width()*rel_x
+      acepto_y = self.ui.acepto.height()*rel_y
+
+      self.ui.acepto.resize(int(self.acepto_x),int(acepto_y))
+      self.ui.acepto.move(int(self.size_x/2 - self.acepto_x/2),int(self.altura_acepto))
+
       #Bandera para el uso del teclado :)
       self.flag_Key = 3 #La vista 3 es la original
 
@@ -309,7 +328,10 @@ class MainWindow(QtGui.QMainWindow):
    #-----------KEYBOARD-------------
    def writePrompt(self):
       self.ui.prompt.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignBottom)
-      self.ui.prompt.setText(self.promptTex)
+      if self.flag_Key == 3:
+         self.ui.prompt.setText(self.promptTex)
+      else:
+         self.ui.prompt.setText(self.promptTex.lower())
 
    def key_delete(self,event):
       self.promptTex = self.promptTex[:-1]
@@ -749,6 +771,20 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continue_btn_V3.move(x + ((1-self.b)*self.x_cV3)/2,y + ((1-self.b)*self.y_cV3)/2)
       #self.ui.continue_btn.setPixmap(startPress)
 
+   def pressCancelar(self,event):
+      #Se guarda el tamaño original del botón
+      self.x_x = self.ui.cancelar.width()
+      self.x_y = self.ui.cancelar.height()
+
+      self.ui.cancelar.resize(int(self.x_x*self.b),int(self.x_y*self.b))
+
+      position = self.ui.cancelar.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.cancelar.move(x + ((1-self.b)*self.x_x)/2,y + ((1-self.b)*self.x_y)/2)
+      #self.ui.continue_btn.setPixmap(startPress)
+
    def releaseRed(self):
       self.ui.red_ranger.resize(self.x_red,self.y_red)
       position = self.ui.red_ranger.pos()
@@ -808,18 +844,34 @@ class MainWindow(QtGui.QMainWindow):
       #self.ui.continue_btn.setPixmap(startRel)
       if self.isSelected() == True:
          self.flag_Key = 3
+         self.ui.prompt.setText("")
          self.promptTex = ""
          self.View3()
+
+   def releaseCancelar(self,event):
+      self.ui.cancelar.resize(self.x_x,self.x_y)
+
+      x = self.positionCancelar.x()
+      y = self.positionCancelar.y()
+      self.ui.cancelar.move(x,y)
+
+      self.View1()
 
    def releaseContinueV3(self,event):
       self.ui.continue_btn_V3.resize(self.x_cV3,self.y_cV3)
 
-      x = self.positionV3.x()
-      y = self.positionV3.y()
-      self.ui.continue_btn_V3.move(x,y)
-      #self.ui.continue_btn.setPixmap(startRel)
-      if self.promptTex != "":
-         self.View4()
+      if self.flag_Key == 3:
+         x = self.positionV3.x()
+         y = self.positionV3.y()
+         self.ui.continue_btn_V3.move(x,y)
+
+         if self.promptTex != "":
+            self.View4()
+      else:
+         self.ui.continue_btn_V3.move(int(self.size_x/2),int(self.y_init_btn))
+
+         if self.promptTex != "" and self.ui.acepto_btn.isChecked() == True:
+            self.View6()
 
    def pressContinueV5(self,event):
       #Se guarda el tamaño original del botón
@@ -843,6 +895,7 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continuar_V5.move(x,y)
       #Pasamos a la vista 6
       self.flag_Key = 5
+      self.ui.prompt.setText("")
       self.promptTex = ""
       self.View3()
       #self.ui.continue_btn.setPixmap(startRel)
@@ -870,6 +923,34 @@ class MainWindow(QtGui.QMainWindow):
       self.View4()
       #self.ui.continue_btn.setPixmap(startRel)
 
+   def View1(self):
+      #Nueva vista 1
+      palette  = QPalette()
+      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.MAIN_VIEW).scaled(self.size_x,self.size_y)))
+      self.ui.setPalette(palette)
+
+      #Reinicio de las opciones
+      self.unlock()
+      red_btn = QPixmap(self.RED)
+      self.ui.red_ranger.setPixmap(red_btn)
+      blue_btn = QPixmap(self.BLUE)
+      self.ui.blue_ranger.setPixmap(blue_btn)
+      black_btn = QPixmap(self.BLACK)
+      self.ui.black_ranger.setPixmap(black_btn)
+      pink_btn = QPixmap(self.PINK)
+      self.ui.pink_ranger.setPixmap(pink_btn)
+      yellow_btn = QPixmap(self.YELLOW)
+      self.ui.yellow_ranger.setPixmap(yellow_btn)
+
+      self.firstTime = False
+
+      self.promptTex = ""
+      self.flag_Key = 3
+      self.IsChecked = [['Red',False],['Pink',False],['Blue',False],['Black',False],['Yellow',False]]
+      self.ui.acepto_btn.setChecked(False)
+
+      self.ui.setCurrentWidget(self.ui.View1)
+
    def View3(self):
       #Nueva vista 3
       palette  = QPalette()
@@ -884,10 +965,14 @@ class MainWindow(QtGui.QMainWindow):
          self.ui.title_v3.move(int(self.size_x/2 - self.t3x/2),int(self.size_y/9))
          self.ui.photo_ranger.move(int(self.size_x/2 - self.fx/2),int(self.size_y/6))
          self.ui.name_v3.move(int(self.size_x/2 - self.name_x/2),int(self.size_y/2 + 2*self.name_y))
+         self.ui.continue_btn_V3.move(int(self.size_x/2 - self.c3x/2),int(self.y_init_btn))
 
          #Vista 6
          self.ui.the_gif_validate.move(self.size_x + 1,self.size_y + 1)
          self.ui.title_V6.move(self.size_x + 1,self.size_y + 1)
+         self.ui.acepto.move(self.size_x + 1,self.size_y + 1)
+         self.ui.acepto_btn.move(self.size_x + 1,self.size_y + 1)
+         self.ui.cancelar.move(self.size_x + 1,self.size_y + 1)
 
          for i in range(len(self.IsChecked)):
             if self.IsChecked[i][1] == True:
@@ -899,6 +984,10 @@ class MainWindow(QtGui.QMainWindow):
          #Vista 6
          self.ui.the_gif_validate.move(int(self.size_x/2 - self.gif2_x/2),int(self.altura_gif2))
          self.ui.title_V6.move(int(self.size_x/2 - self.mail_x/2),int(self.altura_mail))
+         self.ui.acepto.move(int(self.size_x/2 - self.acepto_x/2),int(self.altura_acepto))
+         self.ui.acepto_btn.move(int(0.26*self.size_x),int(self.altura_acepto + 5))
+         self.ui.continue_btn_V3.move(int(self.size_x/2),int(self.y_init_btn))
+         self.ui.cancelar.move(int(self.size_x/25),int(self.y_init_btn))
 
          #Vista 3
          self.ui.title_v3.move(self.size_x + 1,self.size_y + 1)
@@ -920,6 +1009,14 @@ class MainWindow(QtGui.QMainWindow):
 
       #Te gusta la foto?
       self.ui.setCurrentWidget(self.ui.View5)
+
+   def View6(self):
+      #Pasamos a vista 6
+      palette  = QPalette()
+      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_6).scaled(self.size_x,self.size_y)))
+      self.ui.setPalette(palette)
+
+      self.ui.setCurrentWidget(self.ui.View6)
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
