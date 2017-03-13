@@ -243,8 +243,8 @@
    <widget class="QFrame" name="keyboard">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>650</y>
+      <x>50</x>
+      <y>60</y>
       <width>601</width>
       <height>521</height>
      </rect>
@@ -255,7 +255,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="key_q">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -265,20 +265,25 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton {
+      <string notr="true">QPushButton{
 	font: 75 12pt &quot;Adobe Heiti Std R&quot;;
     background-color: #fff;
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>Q</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_20">
+    <widget class="QPushButton" name="key_w">
      <property name="geometry">
       <rect>
        <x>55</x>
@@ -294,14 +299,28 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>W</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_21">
+    <widget class="QPushButton" name="key_r">
      <property name="geometry">
       <rect>
        <x>165</x>
@@ -317,14 +336,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>R</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_22">
+    <widget class="QPushButton" name="key_e">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -340,14 +364,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>E</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_23">
+    <widget class="QPushButton" name="key_y">
      <property name="geometry">
       <rect>
        <x>275</x>
@@ -363,14 +392,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>Y</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_24">
+    <widget class="QPushButton" name="key_i">
      <property name="geometry">
       <rect>
        <x>385</x>
@@ -386,14 +420,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>I</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_25">
+    <widget class="QPushButton" name="key_u">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -409,14 +448,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>U</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_26">
+    <widget class="QPushButton" name="key_t">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -432,14 +476,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>T</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_27">
+    <widget class="QPushButton" name="key_o">
      <property name="geometry">
       <rect>
        <x>440</x>
@@ -455,14 +504,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>O</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_28">
+    <widget class="QPushButton" name="key_p">
      <property name="geometry">
       <rect>
        <x>495</x>
@@ -478,14 +532,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>P</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_38">
+    <widget class="QPushButton" name="key_z">
      <property name="geometry">
       <rect>
        <x>55</x>
@@ -501,14 +560,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>Z</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_39">
+    <widget class="QPushButton" name="key_b">
      <property name="geometry">
       <rect>
        <x>275</x>
@@ -524,18 +588,23 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>B</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_40">
+    <widget class="QPushButton" name="key_delete">
      <property name="geometry">
       <rect>
        <x>495</x>
-       <y>375</y>
+       <y>430</y>
        <width>106</width>
        <height>51</height>
       </rect>
@@ -547,7 +616,12 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
@@ -564,7 +638,7 @@
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_41">
+    <widget class="QPushButton" name="key_n">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -580,14 +654,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>N</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_42">
+    <widget class="QPushButton" name="key_v">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -603,14 +682,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>V</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_43">
+    <widget class="QPushButton" name="key_c">
      <property name="geometry">
       <rect>
        <x>165</x>
@@ -626,14 +710,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>C</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_44">
+    <widget class="QPushButton" name="key_m">
      <property name="geometry">
       <rect>
        <x>385</x>
@@ -649,14 +738,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>M</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_45">
+    <widget class="QPushButton" name="key_punto">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -672,14 +766,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>.</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_46">
+    <widget class="QPushButton" name="key_x">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -695,14 +794,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>X</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_47">
+    <widget class="QPushButton" name="key_arroba">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -718,14 +822,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>@</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_48">
+    <widget class="QPushButton" name="key_5">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -741,14 +850,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_49">
+    <widget class="QPushButton" name="key_6">
      <property name="geometry">
       <rect>
        <x>275</x>
@@ -764,14 +878,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>6</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_50">
+    <widget class="QPushButton" name="key_7">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -787,14 +906,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>7</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_51">
+    <widget class="QPushButton" name="key_2">
      <property name="geometry">
       <rect>
        <x>55</x>
@@ -810,14 +934,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>2</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_52">
+    <widget class="QPushButton" name="key_8">
      <property name="geometry">
       <rect>
        <x>385</x>
@@ -833,14 +962,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>8</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_53">
+    <widget class="QPushButton" name="key_4">
      <property name="geometry">
       <rect>
        <x>165</x>
@@ -856,14 +990,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>4</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_54">
+    <widget class="QPushButton" name="key_0">
      <property name="geometry">
       <rect>
        <x>495</x>
@@ -879,14 +1018,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_55">
+    <widget class="QPushButton" name="key_9">
      <property name="geometry">
       <rect>
        <x>440</x>
@@ -902,14 +1046,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>9</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="key_1">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -925,14 +1074,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_56">
+    <widget class="QPushButton" name="key_3">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -948,14 +1102,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>3</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_57">
+    <widget class="QPushButton" name="key_coma">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -971,14 +1130,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>,</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="key_space">
      <property name="geometry">
       <rect>
        <x>165</x>
@@ -994,14 +1158,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string/>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_58">
+    <widget class="QPushButton" name="key_puntocoma">
      <property name="geometry">
       <rect>
        <x>55</x>
@@ -1017,18 +1186,23 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover{
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>;</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_59">
+    <widget class="QPushButton" name="key_guionbajo">
      <property name="geometry">
       <rect>
        <x>495</x>
-       <y>430</y>
+       <y>375</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -1040,18 +1214,23 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>_</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_60">
+    <widget class="QPushButton" name="key_guion">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>430</y>
+       <x>550</x>
+       <y>375</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -1063,14 +1242,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>-</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_61">
+    <widget class="QPushButton" name="key_number">
      <property name="geometry">
       <rect>
        <x>550</x>
@@ -1086,14 +1270,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>#</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_62">
+    <widget class="QPushButton" name="key_money">
      <property name="geometry">
       <rect>
        <x>550</x>
@@ -1109,14 +1298,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>$</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_63">
+    <widget class="QPushButton" name="key_porcentage">
      <property name="geometry">
       <rect>
        <x>440</x>
@@ -1132,14 +1326,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_64">
+    <widget class="QPushButton" name="key_cc">
      <property name="geometry">
       <rect>
        <x>550</x>
@@ -1155,14 +1354,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>]</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_29">
+    <widget class="QPushButton" name="key_g">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -1178,14 +1382,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>G</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_30">
+    <widget class="QPushButton" name="key_h">
      <property name="geometry">
       <rect>
        <x>275</x>
@@ -1201,14 +1410,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>H</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_31">
+    <widget class="QPushButton" name="key_j">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -1224,14 +1438,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>J</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_32">
+    <widget class="QPushButton" name="key_s">
      <property name="geometry">
       <rect>
        <x>55</x>
@@ -1247,14 +1466,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>S</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_33">
+    <widget class="QPushButton" name="key_k">
      <property name="geometry">
       <rect>
        <x>385</x>
@@ -1270,14 +1494,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>K</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_34">
+    <widget class="QPushButton" name="key_f">
      <property name="geometry">
       <rect>
        <x>165</x>
@@ -1293,14 +1522,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>F</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_35">
+    <widget class="QPushButton" name="key_cs">
      <property name="geometry">
       <rect>
        <x>495</x>
@@ -1316,14 +1550,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>[</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_36">
+    <widget class="QPushButton" name="key_l">
      <property name="geometry">
       <rect>
        <x>440</x>
@@ -1339,14 +1578,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>L</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="key_a">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -1362,14 +1606,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>A</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_37">
+    <widget class="QPushButton" name="key_d">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -1385,17 +1634,22 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>D</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_65">
+    <widget class="QPushButton" name="key_admirar">
      <property name="geometry">
       <rect>
-       <x>550</x>
+       <x>440</x>
        <y>430</y>
        <width>51</width>
        <height>51</height>
@@ -1408,14 +1662,19 @@
 	border-style: outset;
 	border-width: 1px;     
 	border-radius: 10px;
-    border-color: black;
+    border-color: #ddd;
+}
+QPushButton:hover {
+    background-color: #eee;
+    border-style: inset;
+	border-width: 4px; 
 }</string>
      </property>
      <property name="text">
       <string>!</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="prompt">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -1448,8 +1707,8 @@
    <widget class="QLabel" name="continue_btn_V3">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>480</y>
+      <x>170</x>
+      <y>580</y>
       <width>490</width>
       <height>150</height>
      </rect>

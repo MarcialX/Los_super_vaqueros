@@ -174,10 +174,37 @@ class MainWindow(QtGui.QMainWindow):
       name_y = self.ui.name_v3.height()*rel_y
 
       self.ui.name_v3.resize(int(name_x),int(name_y))
-      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2 + name_y))
+      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2 + 2*name_y))
 
       #--------------Keyboard-----------
+      self.promptTex = ""
       self.ui.keyboard.move(int(self.size_x/2 - self.ui.keyboard.width()/2),int(self.size_y/2))
+      self.ui.key_a.mouseReleaseEvent = self.key_a
+      self.ui.key_b.mouseReleaseEvent = self.key_b
+      self.ui.key_c.mouseReleaseEvent = self.key_c
+      self.ui.key_d.mouseReleaseEvent = self.key_d
+      self.ui.key_e.mouseReleaseEvent = self.key_e
+      self.ui.key_f.mouseReleaseEvent = self.key_f
+      self.ui.key_g.mouseReleaseEvent = self.key_g
+      self.ui.key_h.mouseReleaseEvent = self.key_h
+      self.ui.key_i.mouseReleaseEvent = self.key_i
+      self.ui.key_j.mouseReleaseEvent = self.key_j
+      self.ui.key_k.mouseReleaseEvent = self.key_k
+      self.ui.key_l.mouseReleaseEvent = self.key_l
+      self.ui.key_m.mouseReleaseEvent = self.key_m
+      self.ui.key_n.mouseReleaseEvent = self.key_n
+      self.ui.key_o.mouseReleaseEvent = self.key_o
+      self.ui.key_p.mouseReleaseEvent = self.key_p
+      self.ui.key_q.mouseReleaseEvent = self.key_q
+      self.ui.key_r.mouseReleaseEvent = self.key_r
+      self.ui.key_s.mouseReleaseEvent = self.key_s
+      self.ui.key_t.mouseReleaseEvent = self.key_t
+      self.ui.key_u.mouseReleaseEvent = self.key_u
+      self.ui.key_v.mouseReleaseEvent = self.key_v
+      self.ui.key_w.mouseReleaseEvent = self.key_w
+      self.ui.key_x.mouseReleaseEvent = self.key_x
+      self.ui.key_y.mouseReleaseEvent = self.key_y
+      self.ui.key_z.mouseReleaseEvent = self.key_z
 
       #-------------Continuar----------- 
       c3x = self.ui.continue_btn_V3.width()*rel_x
@@ -191,6 +218,156 @@ class MainWindow(QtGui.QMainWindow):
       self.firstTime = False
 
       self.ui.show()
+
+   #-----------KEYBOARD-------------
+   def writePrompt(self):
+      self.ui.prompt.setText(self.promptTex)
+
+   def key_a(self,event):
+      self.promptTex = self.promptTex + "A"
+      self.writePrompt()
+
+   def key_b(self,event):
+      self.promptTex = self.promptTex + "B"
+      self.writePrompt()
+
+   def key_c(self,event):
+      self.promptTex = self.promptTex + "C"
+      self.writePrompt()
+
+   def key_d(self,event):
+      self.promptTex = self.promptTex + "D"
+      self.writePrompt()
+
+   def key_e(self,event):
+      self.promptTex = self.promptTex + "E"
+      self.writePrompt()
+
+   def key_f(self,event):
+      self.promptTex = self.promptTex + "F"
+      self.writePrompt()
+
+   def key_g(self,event):
+      self.promptTex = self.promptTex + "G"
+      self.writePrompt()
+
+   def key_h(self,event):
+      self.promptTex = self.promptTex + "H"
+      self.writePrompt()
+
+   def key_i(self,event):
+      self.promptTex = self.promptTex + "I"
+      self.writePrompt()
+
+   def key_j(self,event):
+      self.promptTex = self.promptTex + "J"
+      self.writePrompt()
+
+   def key_k(self,event):
+      self.promptTex = self.promptTex + "K"
+      self.writePrompt()
+
+   def key_l(self,event):
+      self.promptTex = self.promptTex + "L"
+      self.writePrompt()
+
+   def key_m(self,event):
+      self.promptTex = self.promptTex + "M"
+      self.writePrompt()
+
+   def key_n(self,event):
+      self.promptTex = self.promptTex + "N"
+      self.writePrompt()
+
+   def key_o(self,event):
+      self.promptTex = self.promptTex + "O"
+      self.writePrompt()
+
+   def key_p(self,event):
+      self.promptTex = self.promptTex + "P"
+      self.writePrompt()
+
+   def key_q(self,event):
+      self.promptTex = self.promptTex + "Q"
+      self.writePrompt()
+
+   def key_r(self,event):
+      self.promptTex = self.promptTex + "R"
+      self.writePrompt()
+
+   def key_s(self,event):
+      self.promptTex = self.promptTex + "S"
+      self.writePrompt()
+
+   def key_t(self,event):
+      self.promptTex = self.promptTex + "T"
+      self.writePrompt()
+
+   def key_u(self,event):
+      self.promptTex = self.promptTex + "U"
+      self.writePrompt()
+
+   def key_v(self,event):
+      self.promptTex = self.promptTex + "V"
+      self.writePrompt()
+
+   def key_w(self,event):
+      self.promptTex = self.promptTex + "W"
+      self.writePrompt()
+
+   def key_x(self,event):
+      self.promptTex = self.promptTex + "X"
+      self.writePrompt()
+
+   def key_y(self,event):
+      self.promptTex = self.promptTex + "Y"
+      self.writePrompt()
+
+   def key_z(self,event):
+      self.promptTex = self.promptTex + "Z"
+      self.writePrompt()
+
+   def key_1(self,event):
+      self.promptTex = self.promptTex + "1"
+      self.writePrompt()
+
+   def key_2(self,event):
+      self.promptTex = self.promptTex + "2"
+      self.writePrompt()
+
+   def key_3(self,event):
+      self.promptTex = self.promptTex + "3"
+      self.writePrompt()
+
+   def key_4(self,event):
+      self.promptTex = self.promptTex + "4"
+      self.writePrompt()
+
+   def key_5(self,event):
+      self.promptTex = self.promptTex + "5"
+      self.writePrompt()
+
+   def key_6(self,event):
+      self.promptTex = self.promptTex + "6"
+      self.writePrompt()
+
+   def key_7(self,event):
+      self.promptTex = self.promptTex + "7"
+      self.writePrompt()
+
+   def key_8(self,event):
+      self.promptTex = self.promptTex + "8"
+      self.writePrompt()
+
+   def key_9(self,event):
+      self.promptTex = self.promptTex + "9"
+      self.writePrompt()
+
+   def key_0(self,event):
+      self.promptTex = self.promptTex + "0"
+      self.writePrompt()
+
+   #--------------------------------- 
 
    def checking(self, color):
       for i in range(len(self.IsChecked)):
