@@ -206,6 +206,33 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.key_y.mouseReleaseEvent = self.key_y
       self.ui.key_z.mouseReleaseEvent = self.key_z
 
+      self.ui.key_1.mouseReleaseEvent = self.key_1
+      self.ui.key_2.mouseReleaseEvent = self.key_2
+      self.ui.key_3.mouseReleaseEvent = self.key_3
+      self.ui.key_4.mouseReleaseEvent = self.key_4
+      self.ui.key_5.mouseReleaseEvent = self.key_5
+      self.ui.key_6.mouseReleaseEvent = self.key_6
+      self.ui.key_7.mouseReleaseEvent = self.key_7
+      self.ui.key_8.mouseReleaseEvent = self.key_8
+      self.ui.key_9.mouseReleaseEvent = self.key_9
+      self.ui.key_0.mouseReleaseEvent = self.key_0
+
+      self.ui.key_punto.mouseReleaseEvent = self.key_punto
+      self.ui.key_puntocoma.mouseReleaseEvent = self.key_puntocoma
+      self.ui.key_coma.mouseReleaseEvent = self.key_coma
+      self.ui.key_space.mouseReleaseEvent = self.key_space
+      self.ui.key_money.mouseReleaseEvent = self.key_money
+      self.ui.key_cs.mouseReleaseEvent = self.key_cs
+      self.ui.key_cc.mouseReleaseEvent = self.key_cc
+      self.ui.key_guionbajo.mouseReleaseEvent = self.key_guion_bajo
+      self.ui.key_guion.mouseReleaseEvent = self.key_guion_alto
+      self.ui.key_admirar.mouseReleaseEvent = self.key_admiracion
+      self.ui.key_porcentage.mouseReleaseEvent = self.key_porcentaje
+      self.ui.key_arroba.mouseReleaseEvent = self.key_arroba
+      self.ui.key_number.mouseReleaseEvent = self.key_number
+
+      self.ui.key_delete.mouseReleaseEvent = self.key_delete
+
       #-------------Continuar----------- 
       c3x = self.ui.continue_btn_V3.width()*rel_x
       c3y = self.ui.continue_btn_V3.height()*rel_y
@@ -221,7 +248,12 @@ class MainWindow(QtGui.QMainWindow):
 
    #-----------KEYBOARD-------------
    def writePrompt(self):
+      self.ui.prompt.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignBottom)
       self.ui.prompt.setText(self.promptTex)
+
+   def key_delete(self,event):
+      self.promptTex = self.promptTex[:-1]
+      self.writePrompt()
 
    def key_a(self,event):
       self.promptTex = self.promptTex + "A"
@@ -365,6 +397,58 @@ class MainWindow(QtGui.QMainWindow):
 
    def key_0(self,event):
       self.promptTex = self.promptTex + "0"
+      self.writePrompt()
+
+   def key_punto(self,event):
+      self.promptTex = self.promptTex + "."
+      self.writePrompt()
+
+   def key_arroba(self,event):
+      self.promptTex = self.promptTex + "@"
+      self.writePrompt()
+
+   def key_puntocoma(self,event):
+      self.promptTex = self.promptTex + ";"
+      self.writePrompt()
+
+   def key_coma(self,event):
+      self.promptTex = self.promptTex + ","
+      self.writePrompt()
+
+   def key_guion_bajo(self,event):
+      self.promptTex = self.promptTex + "_"
+      self.writePrompt()
+
+   def key_guion_alto(self,event):
+      self.promptTex = self.promptTex + "-"
+      self.writePrompt()
+
+   def key_porcentaje(self,event):
+      self.promptTex = self.promptTex + "%"
+      self.writePrompt()
+
+   def key_money(self,event):
+      self.promptTex = self.promptTex + "$"
+      self.writePrompt()
+
+   def key_admiracion(self,event):
+      self.promptTex = self.promptTex + "!"
+      self.writePrompt()
+
+   def key_cs(self,event):
+      self.promptTex = self.promptTex + "["
+      self.writePrompt()
+
+   def key_cc(self,event):
+      self.promptTex = self.promptTex + "]"
+      self.writePrompt()
+
+   def key_space(self,event):
+      self.promptTex = self.promptTex + " "
+      self.writePrompt()
+
+   def key_number(self,event):
+      self.promptTex = self.promptTex + "#"
       self.writePrompt()
 
    #--------------------------------- 
@@ -672,16 +756,11 @@ class MainWindow(QtGui.QMainWindow):
       y = self.positionV3.y()
       self.ui.continue_btn_V3.move(x,y)
       #self.ui.continue_btn.setPixmap(startRel)
-      if self.isSelected() == True:
+      if self.promptTex != "":
          self.View4()
 
    def View3(self):
       #Acción Envía Vista 3
-      #Cambio de fondo vista 4
-      palette  = QPalette()
-      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_3).scaled(self.size_x,self.size_y)))
-      self.ui.setPalette(palette)
-      
       self.ui.setCurrentWidget(self.ui.View3)
 
       for i in range(len(self.IsChecked)):
@@ -691,8 +770,24 @@ class MainWindow(QtGui.QMainWindow):
             break
 
    def View4(self):
+      #Pasamos a vista 4
+      #Aquí va lo del GIF
       self.ui.setCurrentWidget(self.ui.View4)
-      print "Hola"
+      print "Tomamos la fotito... y pasamos a la otra vista"
+      self.ui.setCurrentWidget(self.ui.View5)
+
+   def View5(self):
+      #Pasamos vista 5
+      #Te gusta la foto?
+      gif_x = self.ui.title_v3.width()*rel_x
+      gif_y = self.ui.title_v3.height()*rel_y
+
+      self.ui.title_v3.resize(int(t3x),int(t3y))
+      self.ui.title_v3.move(int(self.size_x/2 - t3x/2),int(self.size_y/9))
+
+
+
+
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
