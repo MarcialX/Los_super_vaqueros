@@ -27,6 +27,7 @@ class MainWindow(QtGui.QMainWindow):
       self.MAIN_VIEW = "src/img/ArtesPowerRangers/Pantalla 1/1.jpg"
       self.VIEW_2 = "src/img/ArtesPowerRangers/Pantalla 2/1 Back.jpg"
       self.VIEW_3 = "src/img/ArtesPowerRangers/Pantalla 3/1 Back.jpg"
+      self.VIEW_5 = "src/img/ArtesPowerRangers/Pantalla 5/Back5.jpg"
 
       #Direcciones Caras Vista 3
       self.URL_FACES = ["src/img/ArtesPowerRangers/Pantalla 3/3 Rengers/Red.jpg",
@@ -153,9 +154,6 @@ class MainWindow(QtGui.QMainWindow):
       self.x_yellow = self.ui.yellow_ranger.width()
       self.y_yellow = self.ui.yellow_ranger.height()
 
-      self.positionV2 = self.ui.continue_btn.pos()
-      self.positionV3 = self.ui.continue_btn_V3.pos()
-
       #------------Vista 3--------------
       #-----------Título-----------------
       t3x = self.ui.title_v3.width()*rel_x
@@ -243,6 +241,49 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continue_btn_V3.mouseReleaseEvent = self.releaseContinueV3
 
       self.firstTime = False
+
+      #--------------Vista 5---------------
+      #------------Muestra GIF-------------
+      altura_gif = 350*rel_y
+      gif_x = self.ui.the_gif.width()*rel_x
+      gif_y = self.ui.the_gif.height()*rel_y
+
+      self.ui.the_gif.resize(int(gif_x),int(gif_y))
+      self.ui.the_gif.move(int(self.size_x/2 - gif_x/2),int(altura_gif))
+      #--------------Marco-----------------
+      altura_mark = 1250*rel_y
+      mark_x = self.ui.cuadro.width()*rel_x
+      mark_y = self.ui.cuadro.height()*rel_y
+
+      self.ui.cuadro.resize(int(mark_x),int(mark_y))
+      self.ui.cuadro.move(int(self.size_x/2 - mark_x/2),int(altura_mark))
+      #-----------Atrás botón--------------
+      altura_atras = 1350*rel_y
+      base_atras = 130*rel_x
+
+      atras_x = self.ui.atras.width()*rel_x
+      atras_y = self.ui.atras.height()*rel_y
+
+      self.ui.atras.resize(int(atras_x),int(atras_y))
+      self.ui.atras.move(int(base_atras),int(altura_atras))
+      self.ui.atras.mousePressEvent = self.pressAtrasV5
+      self.ui.atras.mouseReleaseEvent = self.releaseAtrasV5
+      #-----------Continuar botón--------------
+      base_con = 575*rel_x
+
+      con_x = self.ui.continuar_V5.width()*rel_x
+      con_y = self.ui.continuar_V5.height()*rel_y
+
+      self.ui.continuar_V5.resize(int(con_x),int(con_y))
+      self.ui.continuar_V5.move(int(base_con),int(altura_atras))
+      self.ui.continuar_V5.mousePressEvent = self.pressContinueV5
+      self.ui.continuar_V5.mouseReleaseEvent = self.releaseContinueV5
+
+      #Posiciones de los botones continuar
+      self.positionV2 = self.ui.continue_btn.pos()
+      self.positionV3 = self.ui.continue_btn_V3.pos()
+      self.positionV5 = self.ui.continuar_V5.pos()
+      self.positionAtras = self.ui.atras.pos()
 
       self.ui.show()
 
@@ -759,7 +800,58 @@ class MainWindow(QtGui.QMainWindow):
       if self.promptTex != "":
          self.View4()
 
+   def pressContinueV5(self,event):
+      #Se guarda el tamaño original del botón
+      self.x_cV5 = self.ui.continuar_V5.width()
+      self.y_cV5 = self.ui.continuar_V5.height()
+
+      self.ui.continuar_V5.resize(int(self.x_cV5*self.b),int(self.y_cV5*self.b))
+
+      position = self.ui.continuar_V5.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.continuar_V5.move(x + ((1-self.b)*self.x_cV5)/2,y + ((1-self.b)*self.y_cV5)/2)
+      #self.ui.continue_btn.setPixmap(startPress)
+
+   def releaseContinueV5(self,event):
+      self.ui.continuar_V5.resize(self.x_cV5,self.y_cV5)
+
+      x = self.positionV5.x()
+      y = self.positionV5.y()
+      self.ui.continuar_V5.move(x,y)
+      self.ui.setCurrentWidget(self.ui.View6)
+      #self.ui.continue_btn.setPixmap(startRel)
+
+   def pressAtrasV5(self,event):
+      #Se guarda el tamaño original del botón
+      self.x_aV5 = self.ui.atras.width()
+      self.y_aV5 = self.ui.atras.height()
+
+      self.ui.atras.resize(int(self.x_aV5*self.b),int(self.y_aV5*self.b))
+
+      position = self.ui.atras.pos()
+
+      x = position.x()
+      y = position.y()
+      self.ui.atras.move(x + ((1-self.b)*self.x_aV5)/2,y + ((1-self.b)*self.y_aV5)/2)
+      #self.ui.continue_btn.setPixmap(startPress)
+
+   def releaseAtrasV5(self,event):
+      self.ui.atras.resize(self.x_aV5,self.y_aV5)
+
+      x = self.positionAtras.x()
+      y = self.positionAtras.y()
+      self.ui.atras.move(x,y)
+      self.ui.setCurrentWidget(self.ui.View4)
+      #self.ui.continue_btn.setPixmap(startRel)
+
    def View3(self):
+      #Nueva vista 3
+      palette  = QPalette()
+      palette.setBrush(QPalette.Background,QBrush(QPixmap(self.VIEW_3).scaled(self.size_x,self.size_y)))
+      self.ui.setPalette(palette)
+
       #Acción Envía Vista 3
       self.ui.setCurrentWidget(self.ui.View3)
 
@@ -774,20 +866,16 @@ class MainWindow(QtGui.QMainWindow):
       #Aquí va lo del GIF
       self.ui.setCurrentWidget(self.ui.View4)
       print "Tomamos la fotito... y pasamos a la otra vista"
-      self.ui.setCurrentWidget(self.ui.View5)
+      self.View5()
 
    def View5(self):
       #Pasamos vista 5
+      #----------------------
+      #Aqui se pone el gif :)
+      #----------------------
+
       #Te gusta la foto?
-      gif_x = self.ui.title_v3.width()*rel_x
-      gif_y = self.ui.title_v3.height()*rel_y
-
-      self.ui.title_v3.resize(int(t3x),int(t3y))
-      self.ui.title_v3.move(int(self.size_x/2 - t3x/2),int(self.size_y/9))
-
-
-
-
+      self.ui.setCurrentWidget(self.ui.View5)
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)

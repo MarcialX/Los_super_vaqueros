@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>black</class>
- <widget class="QStackedWidget" name="black">
+ <class>marco</class>
+ <widget class="QStackedWidget" name="marco">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1732,7 +1732,84 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
   <widget class="QWidget" name="View4"/>
-  <widget class="QWidget" name="View5"/>
+  <widget class="QWidget" name="View5">
+   <widget class="QLabel" name="the_gif">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>20</y>
+      <width>465</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/rayos/PR_SnapChat_BLACK_Final.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="cuadro">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>720</y>
+      <width>511</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 5/Base.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="atras">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>820</y>
+      <width>380</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 5/atras_btn.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="continuar_V5">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>820</y>
+      <width>380</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/img/ArtesPowerRangers/Pantalla 5/continuar_btn.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>
