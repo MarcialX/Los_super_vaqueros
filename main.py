@@ -156,23 +156,23 @@ class MainWindow(QtGui.QMainWindow):
 
       #------------Vista 3--------------
       #-----------Título-----------------
-      t3x = self.ui.title_v3.width()*rel_x
+      self.t3x = self.ui.title_v3.width()*rel_x
       t3y = self.ui.title_v3.height()*rel_y
 
-      self.ui.title_v3.resize(int(t3x),int(t3y))
-      self.ui.title_v3.move(int(self.size_x/2 - t3x/2),int(self.size_y/9))
+      self.ui.title_v3.resize(int(self.t3x),int(t3y))
+      self.ui.title_v3.move(int(self.size_x/2 - self.t3x/2),int(self.size_y/9))
 
-      fx = self.ui.photo_ranger.width()*rel_x
+      self.fx = self.ui.photo_ranger.width()*rel_x
       fy = self.ui.photo_ranger.height()*rel_y
 
-      self.ui.photo_ranger.resize(int(fx),int(fy))
-      self.ui.photo_ranger.move(int(self.size_x/2 - fx/2),int(self.size_y/6))
+      self.ui.photo_ranger.resize(int(self.fx),int(fy))
+      self.ui.photo_ranger.move(int(self.size_x/2 - self.fx/2),int(self.size_y/6))
 
-      name_x = self.ui.name_v3.width()*rel_x
-      name_y = self.ui.name_v3.height()*rel_y
+      self.name_x = self.ui.name_v3.width()*rel_x
+      self.name_y = self.ui.name_v3.height()*rel_y
 
-      self.ui.name_v3.resize(int(name_x),int(name_y))
-      self.ui.name_v3.move(int(self.size_x/2 - name_x/2),int(self.size_y/2 + 2*name_y))
+      self.ui.name_v3.resize(int(self.name_x),int(self.name_y))
+      self.ui.name_v3.move(int(self.size_x/2 - self.name_x/2),int(self.size_y/2 + 2*self.name_y))
 
       #--------------Keyboard-----------
       self.promptTex = ""
@@ -284,6 +284,25 @@ class MainWindow(QtGui.QMainWindow):
       self.positionV3 = self.ui.continue_btn_V3.pos()
       self.positionV5 = self.ui.continuar_V5.pos()
       self.positionAtras = self.ui.atras.pos()
+
+      #------------Vista 6---------------
+      #------------Muestra GIF-------------
+      self.altura_gif2 = 170*rel_y
+      self.gif2_x = self.ui.the_gif_validate.width()*rel_x
+      gif2_y = self.ui.the_gif_validate.height()*rel_y
+
+      self.ui.the_gif_validate.resize(int(self.gif2_x),int(gif2_y))
+      self.ui.the_gif_validate.move(int(self.size_x/2 - self.gif2_x/2),int(self.altura_gif2))
+      #----------Escribe Correo-------------
+      self.altura_mail = 990*rel_y
+      self.mail_x = self.ui.title_V6.width()*rel_x
+      mail_y = self.ui.title_V6.height()*rel_y
+
+      self.ui.title_V6.resize(int(self.mail_x),int(mail_y))
+      self.ui.title_V6.move(int(self.size_x/2 - self.mail_x/2),int(self.altura_mail))
+
+      #Bandera para el uso del teclado :)
+      self.flag_Key = 3 #La vista 3 es la original
 
       self.ui.show()
 
@@ -788,6 +807,8 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continue_btn.move(x,y)
       #self.ui.continue_btn.setPixmap(startRel)
       if self.isSelected() == True:
+         self.flag_Key = 3
+         self.promptTex = ""
          self.View3()
 
    def releaseContinueV3(self,event):
@@ -820,7 +841,10 @@ class MainWindow(QtGui.QMainWindow):
       x = self.positionV5.x()
       y = self.positionV5.y()
       self.ui.continuar_V5.move(x,y)
-      self.ui.setCurrentWidget(self.ui.View6)
+      #Pasamos a la vista 6
+      self.flag_Key = 5
+      self.promptTex = ""
+      self.View3()
       #self.ui.continue_btn.setPixmap(startRel)
 
    def pressAtrasV5(self,event):
@@ -843,7 +867,7 @@ class MainWindow(QtGui.QMainWindow):
       x = self.positionAtras.x()
       y = self.positionAtras.y()
       self.ui.atras.move(x,y)
-      self.ui.setCurrentWidget(self.ui.View4)
+      self.View4()
       #self.ui.continue_btn.setPixmap(startRel)
 
    def View3(self):
@@ -855,11 +879,31 @@ class MainWindow(QtGui.QMainWindow):
       #Acción Envía Vista 3
       self.ui.setCurrentWidget(self.ui.View3)
 
-      for i in range(len(self.IsChecked)):
-         if self.IsChecked[i][1] == True:
-            face_ranger = QPixmap(self.URL_FACES[i])
-            self.ui.photo_ranger.setPixmap(face_ranger)
-            break
+      if self.flag_Key == 3:
+         #Vista 3
+         self.ui.title_v3.move(int(self.size_x/2 - self.t3x/2),int(self.size_y/9))
+         self.ui.photo_ranger.move(int(self.size_x/2 - self.fx/2),int(self.size_y/6))
+         self.ui.name_v3.move(int(self.size_x/2 - self.name_x/2),int(self.size_y/2 + 2*self.name_y))
+
+         #Vista 6
+         self.ui.the_gif_validate.move(self.size_x + 1,self.size_y + 1)
+         self.ui.title_V6.move(self.size_x + 1,self.size_y + 1)
+
+         for i in range(len(self.IsChecked)):
+            if self.IsChecked[i][1] == True:
+               face_ranger = QPixmap(self.URL_FACES[i])
+               self.ui.photo_ranger.setPixmap(face_ranger)
+               break
+
+      elif self.flag_Key == 5:
+         #Vista 6
+         self.ui.the_gif_validate.move(int(self.size_x/2 - self.gif2_x/2),int(self.altura_gif2))
+         self.ui.title_V6.move(int(self.size_x/2 - self.mail_x/2),int(self.altura_mail))
+
+         #Vista 3
+         self.ui.title_v3.move(self.size_x + 1,self.size_y + 1)
+         self.ui.photo_ranger.move(self.size_x + 1,self.size_y + 1)
+         self.ui.name_v3.move(self.size_x + 1,self.size_y + 1)
 
    def View4(self):
       #Pasamos a vista 4
