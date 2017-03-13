@@ -3,7 +3,9 @@
 
 import sys
 from PyQt4 import QtCore, QtGui,uic
-from PyQt4.QtGui import QPalette,QBrush,QPixmap
+from PyQt4.QtCore import *
+from PyQt4.QtGui import QPalette,QBrush,QPixmap,QMovie
+
 import time
 
 class MainWindow(QtGui.QMainWindow):
@@ -47,6 +49,8 @@ class MainWindow(QtGui.QMainWindow):
       self.PINK_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/pink_blocked.png"
       self.YELLOW = "src/img/ArtesPowerRangers/Pantalla 2/yellow.jpg"
       self.YELLOW_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/yellow_blocked.png"
+
+      self.GIF = "src/img/gif_red.gif"
 
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/main.ui")
@@ -274,6 +278,11 @@ class MainWindow(QtGui.QMainWindow):
       atras_x = self.ui.atras.width()*rel_x
       atras_y = self.ui.atras.height()*rel_y
 
+      # Load the file into a QMovie
+      self.movie = QMovie(self.GIF)
+      self.ui.the_gif.setMovie(self.movie)
+      self.movie.start()
+
       self.ui.atras.resize(int(atras_x),int(atras_y))
       self.ui.atras.move(int(base_atras),int(altura_atras))
       self.ui.atras.mousePressEvent = self.pressAtrasV5
@@ -289,7 +298,7 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.continuar_V5.mousePressEvent = self.pressContinueV5
       self.ui.continuar_V5.mouseReleaseEvent = self.releaseContinueV5
 
-      #Posiciones de los botones continuar
+      #Posiciones de los botones
       self.positionV2 = self.ui.continue_btn.pos()
       self.positionV3 = self.ui.continue_btn_V3.pos()
       self.positionV5 = self.ui.continuar_V5.pos()
