@@ -378,7 +378,10 @@ class MainWindow(QtGui.QMainWindow):
       server.login(fromMail, self.PASS_MAIL)
       text = msg.as_string()
 
-      server.sendmail(fromMail, toMail, text)
+      try:
+         server.sendmail(fromMail, toMail, text)
+      except:
+         print "Error al envío!"
       server.quit()
 
    #-----------KEYBOARD-------------
