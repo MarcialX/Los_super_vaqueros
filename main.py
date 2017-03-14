@@ -8,6 +8,13 @@ from PyQt4.QtGui import QPalette,QBrush,QPixmap,QMovie
 
 import time
 
+#Envio correo electrónico
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+from email.MIMEBase import MIMEBase
+from email import encoders
+
 class MainWindow(QtGui.QMainWindow):
 
    def __init__(self):
@@ -51,6 +58,9 @@ class MainWindow(QtGui.QMainWindow):
       self.YELLOW_BLOCK = "src/img/ArtesPowerRangers/Pantalla 2/yellow_blocked.png"
 
       self.GIF = "src/img/gif_red.gif"
+
+      self.PASS_MAIL = "aradmagol"
+      self.MAIL = "mbecerrilt92@gmail.com"
 
       # Se monta la interfaz de usuario para la pantalla principal
       self.ui = uic.loadUi("views/main.ui")
@@ -338,6 +348,38 @@ class MainWindow(QtGui.QMainWindow):
       self.email = ""
 
       self.ui.show()
+
+   def sendMail(self, file):
+      #Información de e-mail
+      fromMail = self.MAIL
+      toMail = self.email   #"ingenium.consultores.mx@gmail.com"
+       
+      msg = MIMEMultipart()
+       
+      msg['From'] = fromMail
+      msg['To'] = toMail
+      msg['Subject'] = "Power Ranger GIF"
+       
+      body = self.name + " Tenemos listo tu GIF!"
+       
+      msg.attach(MIMEText(body, 'plain'))
+      
+      attachment = open(file, "rb")
+       
+      part = MIMEBase('application', 'octet-stream')
+      part.set_payload((attachment).read())
+      encoders.encode_base64(part)
+      part.add_header('Content-Disposition', "attachment; filename= %s" % file)
+       
+      msg.attach(part)
+       
+      server = smtplib.SMTP('smtp.gmail.com', 587)
+      server.starttls()
+      server.login(fromMail, self.PASS_MAIL)
+      text = msg.as_string()
+
+      server.sendmail(fromMail, toMail, text)
+      server.quit()
 
    #-----------KEYBOARD-------------
    def writePrompt(self):
@@ -1000,6 +1042,12 @@ class MainWindow(QtGui.QMainWindow):
 
       elif self.flag_Key == 5:
          #Vista 6
+         #----------------------
+         #Aqui se pone el gif :)
+         self.ui.the_gif_validate.setMovie(self.movie)
+         self.movie.start()
+         #----------------------
+
          self.ui.the_gif_validate.move(int(self.size_x/2 - self.gif2_x/2),int(self.altura_gif2))
          self.ui.title_V6.move(int(self.size_x/2 - self.mail_x/2),int(self.altura_mail))
          self.ui.acepto.move(int(self.size_x/2 - self.acepto_x/2),int(self.altura_acepto))
@@ -1038,6 +1086,7 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.setPalette(palette)
 
       self.ui.setCurrentWidget(self.ui.View6)
+      self.sendMail(self.GIF)
 
    def restart(self,event):
       self.View1()

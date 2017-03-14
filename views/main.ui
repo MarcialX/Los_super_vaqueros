@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>5</number>
+   <number>2</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -618,7 +618,7 @@ QPushButton:hover {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -852,7 +852,7 @@ QPushButton:hover{
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -880,7 +880,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -908,7 +908,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover{
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -936,7 +936,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -964,7 +964,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -992,7 +992,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -1020,7 +1020,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -1048,7 +1048,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -1076,7 +1076,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -1104,7 +1104,7 @@ QPushButton:pressed {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover{
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
@@ -1272,7 +1272,7 @@ QPushButton:hover {
 	border-radius: 10px;
     border-color: #ddd;
 }
-QPushButton:pressed {
+QPushButton:hover {
     background-color: #eee;
     border-style: inset;
 	border-width: 4px; 
