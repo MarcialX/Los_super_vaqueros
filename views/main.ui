@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>2</number>
+   <number>5</number>
   </property>
   <widget class="QWidget" name="View1">
    <property name="autoFillBackground">
@@ -1710,58 +1710,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:26pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <zorder>key_q</zorder>
-    <zorder>key_w</zorder>
-    <zorder>key_r</zorder>
-    <zorder>key_e</zorder>
-    <zorder>key_y</zorder>
-    <zorder>key_i</zorder>
-    <zorder>key_u</zorder>
-    <zorder>key_t</zorder>
-    <zorder>key_o</zorder>
-    <zorder>key_p</zorder>
-    <zorder>key_z</zorder>
-    <zorder>key_b</zorder>
-    <zorder>key_delete</zorder>
-    <zorder>key_n</zorder>
-    <zorder>key_v</zorder>
-    <zorder>key_c</zorder>
-    <zorder>key_m</zorder>
-    <zorder>key_punto</zorder>
-    <zorder>key_x</zorder>
-    <zorder>key_arroba</zorder>
-    <zorder>key_5</zorder>
-    <zorder>key_6</zorder>
-    <zorder>key_7</zorder>
-    <zorder>key_2</zorder>
-    <zorder>key_8</zorder>
-    <zorder>key_4</zorder>
-    <zorder>key_0</zorder>
-    <zorder>key_9</zorder>
-    <zorder>key_1</zorder>
-    <zorder>key_3</zorder>
-    <zorder>key_coma</zorder>
-    <zorder>key_space</zorder>
-    <zorder>key_puntocoma</zorder>
-    <zorder>key_guionbajo</zorder>
-    <zorder>key_guion</zorder>
-    <zorder>key_number</zorder>
-    <zorder>key_money</zorder>
-    <zorder>key_porcentage</zorder>
-    <zorder>key_cc</zorder>
-    <zorder>key_g</zorder>
-    <zorder>key_h</zorder>
-    <zorder>key_j</zorder>
-    <zorder>key_s</zorder>
-    <zorder>key_k</zorder>
-    <zorder>key_f</zorder>
-    <zorder>key_cs</zorder>
-    <zorder>key_l</zorder>
-    <zorder>key_a</zorder>
-    <zorder>key_d</zorder>
-    <zorder>key_admirar</zorder>
-    <zorder>prompt</zorder>
-    <zorder>acepto</zorder>
    </widget>
    <widget class="QLabel" name="continue_btn_V3">
     <property name="geometry">
@@ -1959,7 +1907,24 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="View6"/>
+  <widget class="QWidget" name="View6">
+   <widget class="QPushButton" name="next_btn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>160</y>
+      <width>341</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 170, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>

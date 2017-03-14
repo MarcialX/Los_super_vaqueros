@@ -278,11 +278,6 @@ class MainWindow(QtGui.QMainWindow):
       atras_x = self.ui.atras.width()*rel_x
       atras_y = self.ui.atras.height()*rel_y
 
-      # Load the file into a QMovie
-      self.movie = QMovie(self.GIF)
-      self.ui.the_gif.setMovie(self.movie)
-      self.movie.start()
-
       self.ui.atras.resize(int(atras_x),int(atras_y))
       self.ui.atras.move(int(base_atras),int(altura_atras))
       self.ui.atras.mousePressEvent = self.pressAtrasV5
@@ -332,15 +327,29 @@ class MainWindow(QtGui.QMainWindow):
       #Bandera para el uso del teclado :)
       self.flag_Key = 3 #La vista 3 es la original
 
+      #Botón pantalla completa      
+      self.ui.next_btn.resize(self.size_x,self.size_y)
+      self.ui.next_btn.move(0,0);
+      self.ui.next_btn.mousePressEvent = self.restart
+
+      #Nombre
+      self.name = ""
+      #Correo
+      self.email = ""
+
       self.ui.show()
 
    #-----------KEYBOARD-------------
    def writePrompt(self):
-      self.ui.prompt.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignBottom)
+      #self.ui.prompt.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignBottom)
       if self.flag_Key == 3:
+         if len(self.promptTex) > 15:
+            self.promptTex = self.promptTex[:15]
          self.ui.prompt.setText(self.promptTex)
+         self.name = self.promptTex
       else:
          self.ui.prompt.setText(self.promptTex.lower())
+         self.mail = self.promptTex.lower()
 
    def key_delete(self,event):
       self.promptTex = self.promptTex[:-1]
@@ -1014,6 +1023,9 @@ class MainWindow(QtGui.QMainWindow):
       #Pasamos vista 5
       #----------------------
       #Aqui se pone el gif :)
+      self.movie = QMovie(self.GIF)
+      self.ui.the_gif.setMovie(self.movie)
+      self.movie.start()
       #----------------------
 
       #Te gusta la foto?
@@ -1026,6 +1038,9 @@ class MainWindow(QtGui.QMainWindow):
       self.ui.setPalette(palette)
 
       self.ui.setCurrentWidget(self.ui.View6)
+
+   def restart(self,event):
+      self.View1()
 
 #Ejecución del programa
 app = QtGui.QApplication(sys.argv)
